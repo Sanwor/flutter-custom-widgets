@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:syuseiclub/src/app_config/app_styles.dart';
 
 class CustomDropdown extends StatefulWidget {
   final List<String> items;
@@ -175,3 +174,4 @@ class _CustomDropdownState extends State<CustomDropdown> {
     );
   }
 }
+
