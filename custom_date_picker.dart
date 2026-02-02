@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 // ignore: depend_on_referenced_packages
 import 'package:intl/intl.dart';
-import 'package:syuseiclub/src/app_config/app_styles.dart';
 
 Future<void> showCustomCupertinoDatePicker({
   required BuildContext context,
@@ -87,3 +86,4 @@ Future<void> showCustomCupertinoDatePicker({
     },
   );
 }
+
