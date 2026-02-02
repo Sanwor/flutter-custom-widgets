@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:syuseiclub/src/widgets/fullscreen_image_view.dart';
 
 class CustomNetworkImage extends StatelessWidget {
   final String imageUrl;
@@ -82,3 +81,4 @@ class CustomNetworkImage extends StatelessWidget {
     );
   }
 }
+
