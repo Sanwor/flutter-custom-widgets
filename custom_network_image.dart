@@ -1,0 +1,84 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:syuseiclub/src/widgets/fullscreen_image_view.dart';
+
+class CustomNetworkImage extends StatelessWidget {
+  final String imageUrl;
+  final double? height;
+  final double? width;
+  final BoxFit fit;
+  final double borderRadius;
+  final Color placeholderColor;
+
+  const CustomNetworkImage({
+    super.key,
+    required this.imageUrl,
+    this.height,
+    this.width,
+    this.fit = BoxFit.cover,
+    this.borderRadius = 8.0,
+    this.placeholderColor = const Color(0xFFECECEC),
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: height,
+      width: width,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(borderRadius),
+        child: GestureDetector(
+          onTap: () {
+            Get.to(() => FullScreenImagePage(imageUrl: imageUrl));
+          },
+          child: CachedNetworkImage(
+            imageUrl: imageUrl,
+            height: height,
+            width: width,
+            fit: fit,
+            placeholder: (context, url) => _buildPlaceholder(),
+            errorWidget: (context, url, error) => _buildErrorWidget(),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildPlaceholder() {
+    return Container(
+      decoration: BoxDecoration(
+        color: placeholderColor,
+        borderRadius: BorderRadius.circular(borderRadius),
+      ),
+      child: Center(
+        child: Opacity(
+          opacity: 0.5,
+          child: Image.asset(height: 30.h, width: 90.w, "assets/icons/title.png")
+        ),
+      ),
+    );
+  }
+
+  Widget _buildErrorWidget() {
+    return Container(
+      decoration: BoxDecoration(
+        color: placeholderColor,
+        borderRadius: BorderRadius.circular(borderRadius),
+      ),
+      child: Center(
+        child: Center(
+          child: Opacity(
+            opacity: 0.5,
+            child: Image.asset(
+              height: 30.h,
+              width: 90.w,
+              "assets/icons/title.png",
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
