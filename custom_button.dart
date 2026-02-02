@@ -1,6 +1,5 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
-import 'package:syuseiclub/src/app_config/app_styles.dart';
 
 // ignore: must_be_immutable
 class CustomButton extends StatelessWidget {
@@ -83,4 +82,5 @@ class CustomButton extends StatelessWidget {
       ),
     );
   }
+
 }
