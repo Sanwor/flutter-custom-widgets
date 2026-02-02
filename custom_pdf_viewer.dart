@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'package:get/get.dart';
-import 'package:syuseiclub/src/app_config/app_styles.dart';
 
 class PdfViewerPage extends StatefulWidget {
   final String pdfUrl;
@@ -82,3 +81,4 @@ class _PdfViewerPageState extends State<PdfViewerPage> {
     );
   }
 }
+
